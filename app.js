@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 //0 0 */3 * * *
 
 cron.schedule("* * * * *", function () {
-    console.log("Cada minuto");
+    console.log("Cada Minuto");
     const transporter = nodeMailer.createTransport({
         host: 'smtp.ethereal.email',
         port: 587,
@@ -25,7 +25,7 @@ cron.schedule("* * * * *", function () {
         to: "jane.doe@example.com", 
         subject: "hola",
         text: "A Message from Node Cron App", 
-        html: "<b>A Message from Node Cron App</b>" 
+        html: "<b>mensaje desde Node cada minuto</b>" 
     };
     transporter.sendMail(mailOptions, function (error, info) {
         console.log(info.messageId);
